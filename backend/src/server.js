@@ -1,4 +1,5 @@
 import express from "express";
+import dns from 'dns';
 import path from "path";
 import cors from "cors";
 import { serve } from "inngest/express";
@@ -11,6 +12,7 @@ import { inngest, functions } from "./lib/inngest.js";
 import chatRoutes from "./routes/chatRoutes.js";
 import sessionRoutes from "./routes/sessionRoute.js";
 
+dns.setServers(["1.1.1.1","8.8.8.8"])
 const app = express();
 
 const __dirname = path.resolve();
